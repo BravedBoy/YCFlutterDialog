@@ -52,7 +52,11 @@ class _YcNormalDialog extends State<YcNormalDialog>{
                     padding: const EdgeInsets.only(bottom: 8.0),
                     child: Text(
                       widget.hiddenTitle ? "" : widget.title,
-                      style: textBoldDark18,
+                      style: TextStyle(
+                          fontSize: font_sp18,
+                          color: Color(0xFF333333),
+                          fontWeight: FontWeight.bold
+                      ),
                     ),
                   ),
                 ),
@@ -109,12 +113,6 @@ class _YcNormalDialog extends State<YcNormalDialog>{
       ),
     );
   }
-
-  static const TextStyle textBoldDark18 = TextStyle(
-      fontSize: font_sp18,
-      color: Color(0xFF333333),
-      fontWeight: FontWeight.bold
-  );
 
   static Widget line = Container(height: 0.6, color: Color(0xFFEEEEEE));
   static const double font_sp18 = 18;

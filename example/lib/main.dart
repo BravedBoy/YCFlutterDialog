@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yc_dialog/YcToast.dart';
+import 'package:yc_dialog_example/DialogList.dart';
 import 'package:yc_dialog_example/GroupList.dart';
 import 'package:yc_dialog/YcNormalDialog.dart';
 
@@ -43,23 +44,11 @@ class AppState extends State<MyApp>{
             new ListTile(
               title: new Text("2.普通的选择弹窗"),
               onTap: (){
-                showDialog(
-                    context: context,
-                    barrierDismissible: false,
-                    builder: (BuildContext context) {
-                      return YcNormalDialog(
-                        hiddenTitle: true,
-                        height: 120.0,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                          child: const Text("请慎重地选择是否需要注销你的用户", textAlign: TextAlign.center),
-                        ),
-                        onPressed: (){
-
-                        },
-                      );
-                    }
-                );
+                print("自定义popupWindow弹窗");
+                navigatorKey.currentState.push(
+                    new MaterialPageRoute(builder: (context) {
+                      return new DialogList();
+                    }));
               },
             ),
             new Divider(),
