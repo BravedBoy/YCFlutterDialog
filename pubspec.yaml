@@ -1,0 +1,21 @@
+name: yc_dialog
+description:  plugin for Android dialog.
+version: 0.0.1
+author: yangchong<yangchong211@gmail.com>
+homepage: https://github.com/yangchong211
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    androidPackage: com.yczbj.yc_dialog
+    pluginClass: YcDialogPlugin
