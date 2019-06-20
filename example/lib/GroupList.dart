@@ -5,6 +5,7 @@ import 'package:yc_dialog/YcPopupWindow.dart';
 
 
 class GroupList extends StatefulWidget{
+
   @override
   State<StatefulWidget> createState() {
     return new GroupState();
