@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yc_dialog/YcToast.dart';
 import 'package:yc_dialog_example/GroupList.dart';
-
+import 'package:yc_dialog/YcNormalDialog.dart';
 
 void main() => runApp(MyApp());
 
@@ -37,22 +37,29 @@ class AppState extends State<MyApp>{
                     new MaterialPageRoute(builder: (context) {
                       return new GroupList();
                     }));
-                /*Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => new GroupList(),
-                  ),
-                );*/
               },
             ),
             new Divider(),
             new ListTile(
-              title: new Text("2.吐司工具，设置位置在中间"),
+              title: new Text("2.普通的选择弹窗"),
               onTap: (){
-                YcToast.showToast(
-                    title: "逗比吐司",
-                    toastLength: Toast.LENGTH_SHORT,
-                    gravity: ToastGravity.CENTER);
+                showDialog(
+                    context: context,
+                    barrierDismissible: false,
+                    builder: (BuildContext context) {
+                      return YcNormalDialog(
+                        hiddenTitle: true,
+                        height: 120.0,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                          child: const Text("请慎重地选择是否需要注销你的用户", textAlign: TextAlign.center),
+                        ),
+                        onPressed: (){
+
+                        },
+                      );
+                    }
+                );
               },
             ),
             new Divider(),
